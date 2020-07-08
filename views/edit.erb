@@ -1,21 +1,21 @@
 <form action="/pizza-orders/<%= @order.id %>" method="post">
     <label for="first-name">First Name</label>
-    <input id="first-name" type="text" name="first_name">
+    <input id="first-name" type="text" name="first_name" value=<%= @order.first_name %>>
 
     <label for="last-name">Last Name</label>
-    <input id="last-name" type="text" name="last_name">
+    <input id="last-name" type="text" name="last_name" value=<%= @order.last_name %>>
 
     <label for="pizza-select">Select a Pizza:</label>
     <select name="topping" id="pizza-select">
-        <option value="cheese">Cheese</option>
-        <option value="ham">Ham</option>
-        <option value="pineapple">Pineapple</option>
-        <option value="pepper">Pepper</option>
-        <option value="chorizo">Chorizo</option>
+        <option value="cheese" <%= selected="selected" if @order.topping == "cheese"%>>Cheese</option>
+        <option value="ham" <%= selected="selected" if @order.topping == "ham"%>>Ham</option>
+        <option value="pineapple" <%= selected="selected" if @order.topping == "pineapple"%>>Pineapple</option>
+        <option value="pepper" <%= selected="selected" if @order.topping == "pepper"%>>Pepper</option>
+        <option value="chorizo" <%= selected="selected" if @order.topping == "chorizo"%>>Chorizo</option>
     </select>
 
     <label for="quantity">Quantity</label>
-    <input id="quantity" type="number" name="quantity">
+    <input id="quantity" type="number" name="quantity" value=<%= @order.quantity %>>
 
     <input type="submit" value="Confirm Changes">
 </form>
